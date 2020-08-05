@@ -89,6 +89,7 @@ class S3StorageProvider(AbstractStorageProvider):
                no_cache: bool=False,
                content_type: Optional[str]=None):
         extra_args = {}
+        extra_args['ACL'] = 'bucket-owner-full-control'
         if no_cache:
             extra_args['CacheControl'] = 'no-cache'
         if content_type:
